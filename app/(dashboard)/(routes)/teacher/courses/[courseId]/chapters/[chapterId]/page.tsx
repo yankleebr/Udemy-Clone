@@ -29,7 +29,7 @@ const ChapterIdPage = async ({
       courseId:params.courseId
     },
     include:{
-      muxData:true
+      muxData:true,
     } 
   })
 
@@ -48,7 +48,7 @@ const ChapterIdPage = async ({
 
   const completionText = `(${completedFields}/${totalFields })` 
 
-  const isComplet = requiredFields.every(Boolean)
+  const isComplete = requiredFields.every(Boolean)
 
 
   return ( 
@@ -79,7 +79,7 @@ const ChapterIdPage = async ({
               </span>
             </div>
             <ChapterActions
-              disabled={!isComplet}
+              disabled={!isComplete}
               courseId={params.courseId}
               chapterId={params.chapterId}
               isPublished={chapter.isPublished}
